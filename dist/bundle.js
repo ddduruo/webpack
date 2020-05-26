@@ -81,16 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./src/aaa.js":
+/*!********************!*\
+  !*** ./src/aaa.js ***!
+  \********************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-const {add,mul} = requie('./aaa.js')
-console.log(add(20,30))
-console.log(mul(20,30))
+eval("function add(a,b){\n  return a+b\n}\nfunction mul(a,b){\n  return a*b\n}\nmodule.exports = {\n  add,\n  mul\n}\n\n//# sourceURL=webpack:///./src/aaa.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const {add,mul} = __webpack_require__(/*! ./aaa.js */ \"./src/aaa.js\")\nconsole.log(add(20,30))\nconsole.log(mul(20,30))\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });
